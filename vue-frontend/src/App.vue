@@ -1,47 +1,61 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import mybar from './views/mybar.vue'
+import MyCart from './views/MyCart.vue';
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+<div id="app">
+  <mybar />
+  <h1>สินค้า</h1>
+    <div class="card-grid">
+      <MyCart />
+      <MyCart />
+      <MyCart />
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+/* นำเข้า Google Fonts - ใช้ฟอนต์ Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* กำหนดสไตล์ให้กับ #app ซึ่งเป็น div หลักใน Vue */
+#app {
+  text-align: center;        /* จัดข้อความให้อยู่กึ่งกลาง */
+  max-width: 1200px;         /* กำหนดความกว้างสูงสุดของเนื้อหา */
+  margin: 0 auto;            /* จัดให้อยู่ตรงกลางของหน้าจอ */
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+/* สไตล์สำหรับหัวข้อหลัก */
+h1 {
+  color: #333;
+  margin-top: 100px;              /* สีเทาเข้ม */
+  margin-bottom: 30px;       /* เว้นระยะด้านล่างของหัวข้อ */
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+/* --------------------- Responsive Grid System --------------------- */
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+/* สร้างกริดแสดงการ์ดแบบ 1 คอลัมน์ สำหรับหน้าจอเล็ก */
+.card-grid {
+  display: grid;                  /* ใช้ grid layout */
+  grid-template-columns: 1fr;    /* 1 คอลัมน์ (เต็มแถว) */
+  gap: 20px;                      /* ระยะห่างระหว่างการ์ด */
+  justify-items: center;         /* จัดให้อยู่ตรงกลางในแต่ละแถว */
+}
+
+/* สำหรับหน้าจอกว้างกว่า 576px  */
+@media (min-width: 576px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr); /* แสดง 2 คอลัมน์ */
+  }
+}
+
+/* สำหรับหน้าจอกว้างกว่า 992px */
+@media (min-width: 992px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr); /* แสดง 3 คอลัมน์ */
   }
 }
 </style>
+
