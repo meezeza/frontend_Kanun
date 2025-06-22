@@ -27,13 +27,14 @@ export default {
   font-family: 'Poppins', sans-serif;
 }
 nav{
- position: fixed;
+ position: sticky;
  left: 0;
  top: 0;
  width: 100%;
  height: 75px;
  background: linear-gradient(145deg, #f135b3, #4158d0);
  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+ border-radius: 10px;
 }
 nav .navbar{
  display: flex;

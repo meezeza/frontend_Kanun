@@ -1,6 +1,7 @@
 <script setup>
 import mybar from './views/mybar.vue'
-import MyCart from './views/MyCart.vue';
+import MyCart from './views/MyCart.vue'
+import products from "./products.json"
 </script>
 
 <template>
@@ -8,9 +9,7 @@ import MyCart from './views/MyCart.vue';
   <mybar />
   <h1>สินค้า</h1>
     <div class="card-grid">
-      <MyCart />
-      <MyCart />
-      <MyCart />
+      <MyCart v-for="item in products" v-bind="item"/>
     </div>
   </div>
 </template>
@@ -29,8 +28,6 @@ import MyCart from './views/MyCart.vue';
 /* สไตล์สำหรับหัวข้อหลัก */
 h1 {
   color: #333;
-  margin-top: 100px;              /* สีเทาเข้ม */
-  margin-bottom: 30px;       /* เว้นระยะด้านล่างของหัวข้อ */
 }
 
 

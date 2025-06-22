@@ -1,27 +1,27 @@
 @ -0,0 +1,73 @@
 <template lang="">
   <div class="card">
-    <img src="\src\img\bud.jpg" alt="In-ear" style="width:100%" />
-    <div className="container">
-      <h1>Xiaomi Earbuds</h1>
-      <p class="price">฿699</p>
-      <p>คุณภาพเสียงยอดเยี่ยม</p>
-      <p><button>Add to Cart</button></p>
-    </div>
-    <img src="\src\img\hyperx.jpg" alt="Mic" style="width:100%" />
-    <div className="container">
-      <h1>HyperX SoloCast</h1>
-      <p class="price">฿1690</p>
-      <p>ไมโครโฟนมีสาย USB</p>
+    <img :src="coverimage" :alt="name" style="width:100%">
+    <div class="container">
+      <h4><b>{{ name }}</b></h4>
+      <p>{{ detail }}</p>
+      <p class="price">{{ price }}</p>
+      <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
       <p><button>Add to Cart</button></p>
     </div>
   </div>
-
 </template>
 
 <script>
 export default {
     name: 'MyCard',
+    props:  [
+      'id',
+      'name',
+      'detail',
+      'coverimage',
+      'price'
+    ]
 }
 </script>
 
