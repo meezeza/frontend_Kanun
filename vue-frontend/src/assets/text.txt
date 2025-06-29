@@ -1,0 +1,83 @@
+{
+  path: "/products/:id",
+  name: "ProductDetail",
+  component: ProductDetail,
+  props: true
+}
+
+
+<script setup>
+import MyCard from '@/views/MyCard.vue';
+import items from '../Products.json';
+</script>
+<template>
+  <main class="tx">
+    <h1>Products</h1>
+    <div className="grid-container">
+      <MyCard
+        v-for="item in items"
+        :key="item.id"
+        :id="item.id"
+        :name="item.name"
+        :detail="item.detail"
+        :coverimage="item.coverimage"
+        :price="item.price"
+      />
+    </div>
+  </main>
+</template>
+<script scope>
+export default {
+  name: "Products",
+  components: {
+    MyCard,
+  },
+  data() {
+    return {
+      items,
+    };
+  },
+};
+</script>
+
+
+<template>
+  <div class="card">
+    <img :src="coverimage" :alt="name" style="width:100%" />
+    <div class="container">
+      <h1>{{ name }}</h1>
+      <p class="price">{{ price }}</p>
+      <p>{{ detail }}</p>
+      <router-link :to="`/products/${id}`">
+        <button>View Details</button>
+      </router-link>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  name: "MyCard",
+  props: {
+    id: {
+      type: [String, Number],
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    detail: {
+      type: String,
+      default: "",
+    },
+    coverimage: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: [String, Number],
+      required: true,
+    },
+  },
+};
+</script>

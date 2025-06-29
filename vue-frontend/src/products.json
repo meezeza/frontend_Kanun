@@ -3,70 +3,70 @@
     "id": 1,
     "name": "Xiaomi Earbuds",
     "detail": "คุณภาพเสียงยอดเยี่ยม",
-    "coverimage": "src/img/bud.jpg",
+    "coverimage": "../src/img/bud.jpg",
     "price": "฿699"
   },
   {
     "id": 2,
     "name": "HyperX SoloCast",
     "detail": "ไมโครโฟนมีสาย USB",
-    "coverimage": "src/img/hyperx.jpg",
+    "coverimage": "../src/img/hyperx.jpg",
     "price": "฿1690"
   },
   {
     "id": 3,
     "name": "SIRIUS 2 MINI BLA CK",
     "detail": "Bluetooth Speaker",
-    "coverimage": "src/img/speaker.jpg",
+    "coverimage": "../src/img/speaker.jpg",
     "price": "฿1500"
   },
   {
     "id": 4,
     "name": "TGM-V32CQ Curve",
     "detail": "Thermaltake TGM-V32CQ is a 32-inch, QHD (2560x1440) curve display",
-    "coverimage": "src/img/monitor.jpg",
+    "coverimage": "../src/img/monitor.jpg",
     "price": "฿7999."
   },
   {
     "id": 5,
     "name": "Wireless Mouse MP-712W",
     "detail": "Advanced 2.4GHz wireless technology.",
-    "coverimage": "src/img/mouse.jpg",
+    "coverimage": "../src/img/mouse.jpg",
     "price": "฿359"
   },
   {
     "id": 6,
     "name": "Webcam WB3023 2K QHD",
     "detail": "face detection, tilt adjustment, High Dynamic Range (HDR),",
-    "coverimage": "src/img/webcam.jpg",
+    "coverimage": "../src/img/webcam.jpg",
     "price": "฿3090"
   },
   {
     "id": 7,
     "name": "Moov HUB05",
     "detail": "HDMI x 1 / USB 3.0 x 2 / Type-C x 2 / SD Card x 1 / TF Card x 1/ RJ45 x 1",
-    "coverimage": "src/img/hub.jpg",
+    "coverimage": "../src/img/hub.jpg",
     "price": "฿559"
   },
   {
     "id": 8,
     "name": "Galaxy Watch7",
     "detail": "WearOS by Google >> Galaxy-Google Compatibility: Play store",
-    "coverimage": "src/img/smartwacth.jpg",
+    "coverimage": "../src/img/smartwacth.jpg",
     "price": "฿11000"
   },
   {
     "id": 9,
     "name": "APC EASY UPS BVX700",
     "detail": "700 VA / 360 W",
-    "coverimage": "src/img/ups.jpg",
+    "coverimage": "../src/img/ups.jpg",
     "price": "฿2200"
   },
   {
     "id": 10,
     "name": "Epson Ink Tank L3216",
     "detail": "Inkjet Printer Up to 5760 x 1440 dpi",
-    "coverimage": "src/img/printer.jpg",
+    "coverimage": "../src/img/printer.jpg",
     "price": "฿4090"
   }
 ]

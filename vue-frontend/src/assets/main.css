@@ -1,35 +1,17 @@
-@import './base.css';
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+  
   body {
-    display: flex;
     place-items: center;
-  }
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+
   }
-}
+  #app {
+    text-align: center;        /* จัดข้อความให้อยู่กึ่งกลาง */
+    max-width: 1200px;         /* กำหนดความกว้างสูงสุดของเนื้อหา */
+    margin: 0 auto;            /* จัดให้อยู่ตรงกลางของหน้าจอ */
+  }
+  
+  /* สไตล์สำหรับหัวข้อหลัก */
+  h1 {
+    color: #585353;
+  }

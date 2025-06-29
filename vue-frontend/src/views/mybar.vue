@@ -2,11 +2,11 @@
 <template>
      <nav>
         <div class="navbar">
-        <div class="logo"><a href="#">SHOP</a></div>
+        <div class="logo"><RouterLink to="/"><img src="../img/store.png" class="img_logo"></RouterLink></div>
         <ul class="menu">
-            <li><a href="#Home">Home</a></li>
-            <li><a href="#Category">Mycrad</a></li>
-            <li><a href="#About">About</a></li>
+            <li><router-link to="/" class="nav-link-item center">Home</router-link></li>
+            <li><router-link to="/product" class="nav-link-item center">MyCart</router-link></li>
+            <li><router-link to="/about" class="nav-link-item center">About</router-link></li>
         </ul>
         </div>
   </nav>
@@ -25,6 +25,11 @@ export default {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+
+}
+.img_logo{
+  position: sticky;
+  height: 50px;
 }
 nav{
  position: sticky;

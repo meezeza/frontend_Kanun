@@ -6,23 +6,39 @@
       <h4><b>{{ name }}</b></h4>
       <p>{{ detail }}</p>
       <p class="price">{{ price }}</p>
-      <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
-      <p><button>Add to Cart</button></p>
+      <p><router-link :to=" `/products/${id} `">
+        <button>View Details</button>
+      </router-link></p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'MyCard',
-    props:  [
-      'id',
-      'name',
-      'detail',
-      'coverimage',
-      'price'
-    ]
-}
+  name: "MyCart",
+  props: {
+    id: {
+      type: [String, Number],
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    detail: {
+      type: String,
+      default: "",
+    },
+    coverimage: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: [String, Number],
+      required: true,
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -33,6 +49,7 @@ export default {
   margin: auto;
   text-align: center;
   font-family: arial;
+  
 }
 
 /* On mouse-over, add a deeper shadow */
