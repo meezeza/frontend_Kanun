@@ -2,13 +2,14 @@
    <div>
     <h1>Products</h1>
     <div class="card-grid">
-      <MyCart v-for="item in products"
-        :key="item.id"
-        :id="item.id"
-        :name="item.name"
-        :detail="item.detail"
-        :coverimage="item.coverimage"
-        :price="item.price"
+      <MyCart 
+      v-for="item in products"
+      :key="item.id"
+      :id="item.id"
+      :name="item.title"
+      :detail="item.description"
+      :coverimage="item.image"
+      :price="item.price"
         />
     </div>
   </div>
@@ -16,7 +17,19 @@
 
 <script setup>
 import MyCart from '@/views/MyCart.vue';
-import products from'@/products.json'
+import { ref, onMounted } from 'vue'
+//import products from'@/products.json'
+
+const products = ref([])
+
+onMounted(() => {
+  fetch('https://fakestoreapi.com/products')
+    .then((res) => res.json())
+    .then((data) => {
+      products.value = data
+    })
+    .catch((err) => console.error('Error fetching products:', err))
+})
 
 </script>
 

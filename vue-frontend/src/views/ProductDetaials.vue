@@ -3,26 +3,32 @@ import { ref, computed, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import items from '../Products.json'; 
 
-const route = useRoute();
-const id = route.params.id;
+const route = useRoute()
+const id = route.params.id
+const product = ref(null)
 
 
-const product = computed(() =>
-  items.find((item) => item.id === parseInt(id)) 
-);
-
-if (!product.value ){
-  console.log ("Product not found")
-}
+onMounted(() => {
+  fetch(`https://fakestoreapi.com/products/${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      product.value = data
+    })
+    .catch((error) => {
+      console.error('Error fetching product:', error)
+    })
+})
 </script>
 
 <template>
   <div v-if="product" class="container">
     <div class="left-column">
-      <img :src="product.coverimage" :alt="product.name" /> </div>
+      <img :src="product.image" :alt="product.name" /> </div>
     <div class="right-column">
       <div class="product-description">
-        <h1>{{ product.name }}</h1> <p>{{ product.detail }}</p> <p>Price: {{ product.price }}</p>
+        <h1>{{ product.title }}</h1> 
+        <p>{{ product.description }}</p> 
+        <p>Price: {{ product.price }}</p>
          <router-link to="/product">
           <button class="cart-btn">Back to Products</button>
         </router-link>
@@ -116,15 +122,16 @@ if (!product.value ){
 }
 
 .cart-btn {
-  display: inline-block;
-  background-color: #ea80ff;
-  border-radius: 6px;
-  font-size: 16px;
+
+  background: linear-gradient(145deg, #f135b3, #4158d0);
+  border-radius: 10px;
+  font-size: 20px;
   color: #FFFFFF;
   text-decoration: none;
   padding: 12px 30px;
   margin-top: 5px;
   transition: all .5s;
+  
 }
 
 .cart-btn:hover {

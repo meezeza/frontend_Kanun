@@ -6,6 +6,7 @@
         <ul class="menu">
             <li><router-link to="/" class="nav-link-item center">Home</router-link></li>
             <li><router-link to="/product" class="nav-link-item center">MyCart</router-link></li>
+            <li><router-link to="/todolist" class="nav-link-item center">List</router-link></li>
             <li><router-link to="/about" class="nav-link-item center">About</router-link></li>
         </ul>
         </div>

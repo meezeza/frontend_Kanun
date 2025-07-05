@@ -78,7 +78,8 @@ img {
   outline: 0;
   padding: 12px;
   color: white;
-  background-color: #000;
+  background: linear-gradient(145deg, #f135b3, #4158d0);
+  border-radius: 10px;
   text-align: center;
   cursor: pointer;
   width: 100%;

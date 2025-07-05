@@ -4,11 +4,13 @@ import ProductPage from '../views/ProductPage.vue';
 import AboutPage from '../views/AboutPage.vue'; 
 import NotFound from '../views/NotFound.vue'; 
 import ProductDetaials from '../views/ProductDetaials.vue';
+import TodoList from '@/views/TodoList.vue';
 
 const routes = [
   { path: '/', component: HomePage },
   { path: '/about', component: AboutPage},
   { path: '/product', component: ProductPage},
+  { path: '/todolist', component: TodoList},
   {
     path: "/products/:id",
     name: "ProductDetail",
